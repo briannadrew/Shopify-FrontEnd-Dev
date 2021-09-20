@@ -1,0 +1,76 @@
+<!-- 
+  index.html
+
+  Author: Brianna Drew
+  Date Created: September 14th, 2021
+  Last Modified: September 19th, 2021
+  Description: This page displays (after a loading screen) images from NASA's APOD (Astronomy Picture of the Day) API along with their title, date taken, description, and a button for users to like/unlike the post. These are displayed in a
+               responsive grid layout through the use of Desandro's Masonry cascading grid layout library. User's also have the ability to share each image via link, email, facebook, pinterest, printing, or twitter (share buttons appear
+               when image is hovered over) thanks to AddToAny.
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Icons courtesy of Font Awesome -->
+    <script
+      src="bc252b50f1.js" crossorigin="anonymous"></script>
+    <!-- Ability to determine when images have been loaded courtesy of Desandro's imagesLoaded -->
+    <script src="imagesloaded.pkgd.js"></script>
+    <!-- Responsive grid layout courtesy of Desandro's Masonry -->
+    <script src="masonry.pkgd.js"></script>
+    <script defer src="script.js"></script>
+    <title>NASA Astronomy Picture of the Day</title>
+  </head>
+
+  <body>
+    <header>
+
+      <!-- Loading screen (adapted from https://codepen.io/l-e-e/pen/JjNqvoR and https://redstapler.co/add-loading-animation-to-website/) -->
+      <section class="loader-wrapper">
+        <span class="dots" id="dot1"></span>
+        <span class="dots" id="dot2"></span>
+        <span class="dots" id="dot3"></span>
+        <span class="dots" id="dot4"></span>
+        <span class="dots" id="dot5"></span>
+      </section>
+      
+      <!-- Main heading -->
+      <h1 id="titlehead" class="hidden"><img src="https://img.icons8.com/color/96/000000/nasa.png" id="nasa-logo"/>ASTRONOMY PICTURE OF THE DAY</h1>
+
+      <!-- Image sharing buttons -->
+      <script>
+        var a2a_config = a2a_config || {};
+        a2a_config.overlays = a2a_config.overlays || [];
+        a2a_config.overlays.push({
+          services: [ 'copy_link', 'email', 'facebook', 'pinterest', 'print', 'twitter', ],
+          useImage: true,
+        });
+      </script>
+
+    </header>
+    <main>
+
+      <!-- Grid layout -->
+      <section class="grid hidden">
+        <div class="grid-sizer"></div> 
+      </section>
+
+    </main>
+    <footer>
+
+      <!-- Image sharing buttons courtesy of AddToAny https://www.addtoany.com/buttons/customize/image_sharing -->
+      <script async src="https://static.addtoany.com/menu/page.js"></script>
+
+      <!-- NASA logo icon courtesy of Icons8 https://icons8.com/icons/set/nasa -->
+      <a href="https://icons8.com/icon/63673/nasa" class="hidden" id="credit">Nasa icon by Icons8</a>
+
+    </footer>
+  </body>
+
+</html>

@@ -1,0 +1,159 @@
+/*
+  script.css
+
+  Author: Brianna Drew
+  Date Created: September 16th, 2021
+  Last Modified: September 19th, 2021
+  Description: This cascading style sheet provides styling to the loading screen and main elements of a repository of images and information obtained from NASA's APOD (Astronomy Picture of the Day) API from July 1st, 2021 to now.
+*/
+
+/* Fonts courtesy of Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+
+/* Base font */
+:root {
+    font-family: 'Space Mono', monospace;
+}
+
+/* Elements with this class will not be visible */
+.hidden {
+    display: none;
+}
+
+/* Reset margins, padding, and background of entire page */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #202124;
+}
+
+
+/* ############################################################################################################################## */
+/* LOADING SCREEN (adapted from https://codepen.io/l-e-e/pen/JjNqvoR and https://redstapler.co/add-loading-animation-to-website/) */
+/* ############################################################################################################################## */
+
+/* Loading screen container */
+.loader-wrapper {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #2A2F96;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* The dots of the loading screen ellipsis */
+.dots {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    margin: 5px;
+    border-radius: 50px;
+    animation:fade 1.5s alternate infinite;
+}
+
+/* Second dot of loading screen ellipsis */
+#dot2 {
+    animation-delay: 0.25s;
+}
+
+/* Third dot of loading screen ellipsis */
+#dot3 {
+    animation-delay: 0.5s;
+}
+
+/* Fourth dot of loading screen ellipsis */
+#dot4 {
+    animation-delay: 0.75s;
+}
+
+/* Fifth dot of loading screen ellipsis */
+#dot5 {
+    animation-delay: 1s;
+}
+
+/* Fade animation for loading screen ellipsis */
+@keyframes fade{
+    0%{opacity: 0;}
+    50%{opacity: 0;}
+    100%{opacity: 1;}
+  }
+/* ############################################################################################################################## */
+
+/* Main heading */
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3em;
+    color: white;
+}
+
+/* NASA logo */
+#nasa-logo {
+    padding-right: 8px;
+}
+
+/* Main heading & NASA logo container */
+#titlehead {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Grid layout of results from NASA APOD API */
+.grid {
+    margin: auto;
+    width: 95vw;
+}
+
+/* Sizing for each individual result from NASA APOD API */
+.grid-sizer, .grid-item {
+    width: 30vw;
+}
+
+/* Images retrieved from NASA APOD API */
+img {
+    max-width:100%;
+    max-height:100%;
+}
+
+/* Each individual result from NASA APOD API */
+.grid-item {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, .5);
+    -webkit-box-shadow: 0 -2px 10px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 0 -2px 10px rgba(0, 0, 0, 1);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 1);
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+/* Date and like buttons container */
+#date-like {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Like buttons */
+i {
+    color: #E53935;
+}
+
+/* Like buttons on hover */
+i:hover {
+    cursor: pointer;
+}
+
+/* Footer (displays credits for NASA logo) */
+footer {
+    text-align: center;
+    margin-top: 45px;
+    margin-bottom: 20px;
+}
